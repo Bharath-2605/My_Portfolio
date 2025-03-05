@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    
-    <title>Portuguese Banking Classification</title>
-    <meta content="Predictive model for customer engagement in banking campaigns" name="description">
-    <meta content="Machine Learning, Classification, Banking, Predictive Analytics" name="keywords">
+  
+    <title>Portuguese-Banking-Classification</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
   
     <!-- Favicons -->
     <link href="../assets/img/favicon.png" rel="icon">
     <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700|Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   
     <!-- Vendor CSS Files -->
     <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,11 +23,18 @@
   
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
+  
+    <!-- =======================================================
+    * Template Name: Personal - v2.2.0
+    * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
   </head>
   
-  <body>
+  <body data-gr-c-s-loaded="true">
   
-  <!-- ======= Project Details ======= -->
+  <!-- ======= Portfolio Details ======= -->
     <main id="main">
       <div id="portfolio-details" class="portfolio-details">
         <div class="container">
@@ -40,29 +45,33 @@
               <br>
               <h2 style="color:#12d640">Portuguese Banking Classification</h2>
               <ul>
-                <li><strong>Tech Stack</strong>: Python, Scikit-Learn, Pandas, NumPy</li>
+                <li><strong>Tech Stack</strong>: Python, Machine Learning</li>
                 <li><strong>Github URL</strong>: <a href="https://github.com/Bharath-2605/Portuguese-Banking-Classification" target="_blank">Project Link</a></li>
               </ul>
   
                 <p>
-                This project aims to develop a predictive model to identify customers more likely to engage positively with a banking campaign. By leveraging historical data, we optimize marketing strategies, improve conversion rates, and reduce unnecessary calls.
+                Developed a predictive model to identify customers more likely to engage positively with marketing campaigns.
+                By leveraging historical campaign data, the project aims to optimize marketing efforts, improve conversion rates,
+                and minimize unnecessary outreach.
                 </p>
                 <p>
-                The model is built using machine learning techniques, incorporating data preprocessing, feature engineering, and classification algorithms. Various evaluation metrics ensure the model's effectiveness in predicting customer engagement.
+                The model is built using Python and machine learning techniques, with features engineered from past customer interactions.
+                Various classification algorithms, including logistic regression, decision trees, and ensemble methods, were evaluated
+                to achieve high accuracy.
                 </p>
                 <p>
-                Key techniques used: Logistic Regression, Decision Trees, Random Forest, and Gradient Boosting.
+                The model achieved an accuracy of 88%, improving customer targeting efficiency and marketing ROI.
                 </p>
             </div>
   
           </div>
   
         </div>
-      </div><!-- End Project Details -->
+      </div><!-- End Portfolio Details -->
     </main><!-- End #main -->
   
    <!-- Vendor JS Files -->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
     <script src="../assets/vendor/php-email-form/validate.js"></script>
@@ -74,5 +83,8 @@
   
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
+  
+    <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
+  
   </body>
-</html>
+  </html>
