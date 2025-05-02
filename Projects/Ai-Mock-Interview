@@ -46,6 +46,7 @@
               <h2 style="color:#12d640">G-Attendance</h2>
               <ul>
                 <li><strong>Tech Stack</strong>: Python, Tkinter (Python GUI),Flask,React</li>
+                <li><strong>Website URL</strong>: <a href="https://mock-interview-system-python.vercel.app/" target="_blank">Link</a></li>
                 <li><strong>Github URL</strong>: <a href="https://github.com/Bharath-2605/Mock-Interview-System-Bunny-Python" target="_blank">Project Link</a></li>
               </ul>
   
