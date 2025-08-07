@@ -26,6 +26,7 @@
     <meta content="" name="keywords">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -46,12 +47,12 @@
         gtag('js', new Date());
         gtag('config', 'UA-169007209-3');
     </script>
-    
+
     <style>
         .section-bg {
             background-color: #111827;
         }
-        
+
         .section-title h2 {
             font-size: 3rem;
             font-weight: 700;
@@ -65,7 +66,8 @@
             max-width: 50rem;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 1rem; /* Added margin to create space */
+            margin-top: 1rem;
+            /* Added margin to create space */
         }
 
         .project-filter-buttons .project-filter-btn {
@@ -88,7 +90,7 @@
             color: #fff;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-        
+
         .project-card {
             background-color: #1f2937;
             border-radius: 0.75rem;
@@ -117,7 +119,7 @@
             font-weight: 600;
             font-size: 0.875rem;
         }
-        
+
         .project-card-image {
             position: relative;
             overflow: hidden;
@@ -153,7 +155,7 @@
             flex-direction: column;
             flex-grow: 1;
         }
-        
+
         .project-card-body h3 {
             font-size: 1.25rem;
             font-weight: 700;
@@ -256,15 +258,16 @@
 
         /* Adjusted CSS to prevent ALL section headers from colliding with the fixed header */
         section {
-            padding-top: 80px; /* Add padding to the top of all sections */
+            padding-top: 80px;
+            /* Add padding to the top of all sections */
         }
-        
+
         .section-title {
-            padding-top: 0; /* Remove the extra padding from the section title itself */
+            padding-top: 0;
+            /* Remove the extra padding from the section title itself */
         }
 
         /* HOME PAGE ANIMATIONS */
-        
         #header {
             animation: fadeIn 2s ease-in-out;
             background-size: cover;
@@ -286,41 +289,41 @@
 
         /* Fire effect for the name */
         #header h1 a {
-            color: transparent;
-            font-size: 4rem; /* Adjust font size as needed */
+            color: #ffffff;
+            font-size: 4rem;
+            font-family: 'Creepster', cursive;
             text-transform: uppercase;
-            font-weight: bold;
-            -webkit-text-stroke: 1px #d62828;
-            position: relative;
-            animation: fiery-glow 1.5s ease-in-out infinite alternate;
+            text-shadow:
+                0 0 5px #f25f4c,
+                0 0 10px #f25f4c,
+                0 0 15px #f25f4c,
+                0 0 20px #f25f4c,
+                0 0 25px #ff5959,
+                0 0 30px #ff5959,
+                0 0 40px #ff5959;
+            animation: fire-text-flicker 2s linear infinite;
         }
 
-        #header h1 a::before {
-            content: "Bharath Bollineni";
-            position: absolute;
-            top: 0;
-            left: 0;
-            color: #fcbf49;
-            width: 100%;
-            overflow: hidden;
-            animation: fiery-text 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes fiery-glow {
-            0% {
-                text-shadow: 0 0 5px #f25f4c, 0 0 10px #f25f4c, 0 0 15px #f25f4c, 0 0 20px #f25f4c, 0 0 25px #ff5959, 0 0 30px #ff5959, 0 0 40px #ff5959;
+        @keyframes fire-text-flicker {
+            0%, 100% {
+                text-shadow:
+                    0 0 5px #f25f4c,
+                    0 0 10px #f25f4c,
+                    0 0 15px #f25f4c,
+                    0 0 20px #f25f4c,
+                    0 0 25px #ff5959,
+                    0 0 30px #ff5959,
+                    0 0 40px #ff5959;
             }
-            100% {
-                text-shadow: 0 0 10px #f48024, 0 0 20px #f48024, 0 0 30px #f48024, 0 0 40px #f48024, 0 0 50px #ff5959, 0 0 60px #ff5959, 0 0 70px #ff5959;
-            }
-        }
-
-        @keyframes fiery-text {
-            0% {
-                height: 0%;
-            }
-            100% {
-                height: 100%;
+            50% {
+                text-shadow:
+                    0 0 10px #f48024,
+                    0 0 20px #f48024,
+                    0 0 30px #f48024,
+                    0 0 40px #f48024,
+                    0 0 50px #ff5959,
+                    0 0 60px #ff5959,
+                    0 0 70px #ff5959;
             }
         }
 
@@ -332,9 +335,15 @@
         }
 
         @keyframes background-gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
     </style>
 
@@ -621,7 +630,7 @@
                 <h2>Projects</h2>
                 <p>A showcase of my recent work and personal projects</p>
             </div>
-            
+
             <div class="d-flex flex-wrap justify-content-center gap-2 mb-4 project-filter-buttons">
                 <button class="btn project-filter-btn active" data-filter="all">All</button>
                 <button class="btn project-filter-btn" data-filter="Full Stack">Full Stack</button>
@@ -695,7 +704,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 project-item" data-category="Frontend">
                     <div class="project-card featured">
                         <div class="featured-tag">Featured Project</div>
@@ -921,7 +930,7 @@
 
                     projectItems.forEach(item => {
                         const itemCategory = item.getAttribute('data-category');
-                        
+
                         if (filterValue === 'all' || filterValue === itemCategory) {
                             item.style.display = 'block';
                         } else {
