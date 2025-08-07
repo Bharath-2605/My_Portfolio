@@ -274,6 +274,12 @@
             position: relative;
             z-index: 1;
             overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         #header::before {
@@ -288,62 +294,47 @@
         }
 
         /* Fire effect for the name */
-        #header h1 a {
-            color: #ffffff;
-            font-size: 4rem;
+        .fire-text {
+            color: #fff;
+            font-size: 6rem; /* Increased size for impact */
             font-family: 'Creepster', cursive;
             text-transform: uppercase;
             text-shadow:
-                0 0 5px #f25f4c,
-                0 0 10px #f25f4c,
-                0 0 15px #f25f4c,
-                0 0 20px #f25f4c,
-                0 0 25px #ff5959,
-                0 0 30px #ff5959,
-                0 0 40px #ff5959;
-            animation: fire-text-flicker 2s linear infinite;
+                0 -5px 10px rgba(255, 255, 255, 0.9),
+                0 -10px 20px rgba(255, 255, 255, 0.7),
+                0 -20px 40px rgba(255, 255, 255, 0.5),
+                0 -30px 60px #fff84c,
+                0 -40px 80px #ffb347,
+                0 -50px 100px #ff8000,
+                0 -60px 120px #ff0000;
+            animation: fire-flicker 0.2s linear infinite;
         }
 
-        @keyframes fire-text-flicker {
+        @keyframes fire-flicker {
             0%, 100% {
                 text-shadow:
-                    0 0 5px #f25f4c,
-                    0 0 10px #f25f4c,
-                    0 0 15px #f25f4c,
-                    0 0 20px #f25f4c,
-                    0 0 25px #ff5959,
-                    0 0 30px #ff5959,
-                    0 0 40px #ff5959;
+                    0 -5px 10px rgba(255, 255, 255, 0.9),
+                    0 -10px 20px rgba(255, 255, 255, 0.7),
+                    0 -20px 40px rgba(255, 255, 255, 0.5),
+                    0 -30px 60px #fff84c,
+                    0 -40px 80px #ffb347,
+                    0 -50px 100px #ff8000,
+                    0 -60px 120px #ff0000;
             }
             50% {
                 text-shadow:
-                    0 0 10px #f48024,
-                    0 0 20px #f48024,
-                    0 0 30px #f48024,
-                    0 0 40px #f48024,
-                    0 0 50px #ff5959,
-                    0 0 60px #ff5959,
-                    0 0 70px #ff5959;
+                    0 -5px 12px rgba(255, 255, 255, 1),
+                    0 -12px 22px rgba(255, 255, 255, 0.8),
+                    0 -22px 44px rgba(255, 255, 255, 0.6),
+                    0 -32px 64px #fff84c,
+                    0 -42px 84px #ffb347,
+                    0 -52px 104px #ff8000,
+                    0 -62px 124px #ff0000;
             }
         }
-
-        /* Additional background animation */
-        body {
-            background-color: #111827;
-            animation: background-gradient 10s ease infinite;
-            background-size: 200% 200%;
-        }
-
-        @keyframes background-gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        
+        .header-tops .container h1 a {
+            font-size: 1rem !important; /* Adjusted to keep the name in the header small */
         }
     </style>
 
@@ -354,8 +345,9 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header id="header" class="header-tops">
         <div class="container">
-            <h1><a href="index.html">Bharath Bollineni</a></h1>
+            <h1 class="fire-text">Bharath Bollineni</h1>
             <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
+
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="#header"> <span>Home</span></a></li>
