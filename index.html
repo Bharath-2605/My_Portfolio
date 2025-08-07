@@ -1,17 +1,23 @@
-e<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5BB8W2X');</script>
-  <!-- End Google Tag Manager -->
-
-  <link rel="icon" type="image/png" href="/favicon.png"/>
+  <script>(function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5BB8W2X');</script>
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -19,40 +25,235 @@ e<!DOCTYPE html>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-
-  <!-- Use Boxicons CDN for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169007209-3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
     gtag('config', 'UA-169007209-3');
   </script>
+  
+  <style>
+    .section-bg {
+      background-color: #111827;
+    }
+    
+    .section-title h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      font-size: 1.25rem;
+      color: #9ca3af;
+      max-width: 50rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-filter-buttons .project-filter-btn {
+      background-color: #1f2937;
+      color: #9ca3af;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .project-filter-buttons .project-filter-btn:hover {
+      background-color: #374151;
+      color: #10b981;
+    }
+
+    .project-filter-buttons .project-filter-btn.active {
+      background-color: #10b981;
+      color: #fff;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .project-card {
+      background-color: #1f2937;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .project-card.featured {
+      border: 2px solid #10b981;
+    }
+
+    .project-card .featured-tag {
+      background: linear-gradient(to right, #10b981, #059669);
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem 0;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+    
+    .project-card-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card-image img {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover .project-card-image img {
+      transform: scale(1.1);
+    }
+
+    .project-card-image .category-tag {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: rgba(17, 24, 39, 0.9);
+      backdrop-filter: blur(8px);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #9ca3af;
+    }
+
+    .project-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    
+    .project-card-body h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card-body .date {
+      color: #9ca3af;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .project-card-body .date i {
+      margin-right: 0.25rem;
+    }
+
+    .project-card-body p {
+      color: #9ca3af;
+      font-size: 1rem;
+      line-height: 1.625;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card-body .technologies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card-body .technologies .tech-tag {
+      background-color: #374151;
+      color: #9ca3af;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .project-card-body .technologies .tech-tag i {
+      margin-right: 0.25rem;
+    }
+
+    .project-card-body .links {
+      display: flex;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .project-card-body .links .btn {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .project-card-body .links .btn i {
+      margin-right: 0.5rem;
+    }
+
+    .project-card-body .links .btn-demo {
+      background-color: #10b981;
+      color: #fff;
+    }
+
+    .project-card-body .links .btn-demo:hover {
+      background-color: #059669;
+    }
+
+    .project-card-body .links .btn-github {
+      border: 1px solid #374151;
+      color: #9ca3af;
+      background-color: #1f2937;
+    }
+
+    .project-card-body .links .btn-github:hover {
+      background-color: #374151;
+    }
+
+    .btn-disabled {
+      background-color: #4b5563 !important;
+      color: #6b7280 !important;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- ======= Header ======= -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header id="header" class="header-tops">
     <div class="container">
       <h1><a href="index.html">Bharath Bollineni</a></h1>
@@ -68,9 +269,7 @@ e<!DOCTYPE html>
           <li><a href="https://drive.google.com/file/d/1pE7ebwIF5ZNtP93aegbuegfQT2uT28XB/view?usp=drive_link" target="_blank"> <span>Resume</span></a></li>
           <li><a href="#contacts"> <span>Contact</span></a></li>
         </ul>
-      </nav><!-- .nav-menu -->
-
-      <div class="social-links">
+      </nav><div class="social-links">
         <a href="https://www.linkedin.com/in/bb-bollineni/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         <a href="https://www.github.com/Bharath-2605" target="_blank" class="github"><i class="bx bxl-github"></i></a>
         <a href="https://www.credly.com/users/bb-bollineni/edit#credly" target="_blank" class="credly"><i class="bxr bx-radar"></i></a>
@@ -81,594 +280,519 @@ e<!DOCTYPE html>
       </div>
 
     </div>
-  </header><!-- End Header -->
+  </header><section id="about" class="about">
 
-</body>
+    <div class="about-me container">
 
-</html>
+      <div class="section-title">
+        <h2>About</h2>
+      </div>
 
-<!-- ======= About Section ======= -->
-<section id="about" class="about">
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          <img src="profile.jpeg" class="img-fluid" alt="Profile Image">
+        </div>
 
-  <!-- ======= About Me ======= -->
-  <div class="about-me container">
-
-    <div class="section-title">
-      <h2>About</h2>
-    </div>
-
- <div class="row">
-  <div class="col-lg-4" data-aos="fade-right">
-    <img src="profile.jpeg" class="img-fluid" alt="Profile Image">
-
-
-  </div>
-
-      <div class= "col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-        <p>I am a passionate developer with a deep interest in software development and data science. My journey has been defined by a commitment to understanding core principles and transforming them into real-world solutions through practical applications. I specialize in creating algorithms and systems that address complex challenges and derive meaningful insights from data. With a focus on innovation and continuous growth, I aim to contribute to impactful projects that drive progress and deliver value in the tech industry.
-        <div class="row">
-          <div class="col-lg-6">
-            <ul>
-              <li><i class="fas fa-birthday-cake"></i> <strong>Birthday:</strong> 26 May 2004</li>
-              <li><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +91 8247370980</li>
-            </ul>
-          </div>
-          <div class="col-lg-6">
-            <ul>
-              <li><i class="fas fa-map-marker-alt"></i> <strong>City:</strong> Chittoor, Andhra Pradesh, 517001</li>
-              <li><i class="fas fa-envelope"></i> <strong>Email:</strong> bharathbollineni.2605@gmail.com</li>
-            </ul>
-          </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <p>I am a passionate developer with a deep interest in software development and data science. My journey has been defined by a commitment to understanding core principles and transforming them into real-world solutions through practical applications. I specialize in creating algorithms and systems that address complex challenges and derive meaningful insights from data. With a focus on innovation and continuous growth, I aim to contribute to impactful projects that drive progress and deliver value in the tech industry.
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="fas fa-birthday-cake"></i> <strong>Birthday:</strong> 26 May 2004</li>
+                  <li><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +91 8247370980</li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="fas fa-map-marker-alt"></i> <strong>City:</strong> Chittoor, Andhra Pradesh, 517001</li>
+                  <li><i class="fas fa-envelope"></i> <strong>Email:</strong> bharathbollineni.2605@gmail.com</li>
+                </ul>
+              </div>
+            </div>
         </div>
       </div>
-    </div>
-
-  </div><!-- End About Me -->
-  <!-- ======= Interests ======= -->
-<div class="interests container">
-  <!-- Include Remix Icon Library -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-  
-  <div class="section-title text-center">
-    <h2>Interests</h2>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-3 col-md-4 mb-4">
-      <div class="icon-box">
-        <i class="ri-global-line" style="color: #ffbb2c; font-size: 40px;"></i>
-        <h3>Software Development</h3>
+    </div><div class="interests container">
+      <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+      
+      <div class="section-title text-center">
+        <h2>Interests</h2>
       </div>
-    </div>
 
-    <div class="col-lg-3 col-md-4 mb-4">
-      <div class="icon-box">
-        <i class="ri-database-2-line" style="color: #5578ff; font-size: 40px;"></i>
-        <h3>Machine Learning</h3>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-4 mb-4">
-      <div class="icon-box">
-        <i class="ri-camera-3-line" style="color: #e80368; font-size: 40px;"></i>
-        <h3>Computer Vision</h3>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-4 mb-4">
-      <div class="icon-box">
-        <i class="ri-english-input" style="color: #1c7d32; font-size: 40px;"></i>
-        <h3>Web Development</h3>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-4 mb-4">
-      <div class="icon-box">
-        <i class="ri-code-s-slash-fill" style="color: #28a745; font-size: 40px;"></i>
-        <h3>Software Engineering</h3>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-4 mb-4">
-      <div class="icon-box">
-        <i class="ri-bar-chart-box-line" style="color: #f1081f; font-size: 40px;"></i>
-        <h3>Data Structures</h3>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-4 mb-4">
-      <div class="icon-box">
-        <i class="ri-file-list-3-line" style="color: #47aeff; font-size: 40px;"></i>
-        <h3>Algorithms</h3>
-      </div>
-    </div>
-    <!-- <div class="col-lg-3 col-md-4 mt-4">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 mb-4">
           <div class="icon-box">
-            <i class="ri-image-line" style="color: #ffc107;"></i>
-            <h3>Image processing</h3>
+            <i class="ri-global-line" style="color: #ffbb2c; font-size: 40px;"></i>
+            <h3>Software Development</h3>
           </div>
-        </div> -->
-  </div>
-</div><!-- End Interests -->
-
-  </section><!-- End About Section -->
-
-  .
-  <!-- ======= Education Section ======= -->
-  <section id="education" class="services">
-   <div class="container">
-    <div class="section-title">
-      <h2>Education</h2>
-    </div>
-    <div class="row">
-      <div class="col-lg-12" data-aos="fade-up" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-
-        <!-- B.Tech -->
-        <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding: 0px 0px; padding-bottom: 5px;">
-          <img src="Education/Gitam.jpg" class="img-fluid" alt="B.Tech Image">
-          <p style="text-align: left; color: #fff; padding: 5px 10px;"><em>B.Tech. in Computer Science (Data Science)</em></p>
-          <h5 style="text-align: left; padding: 0px 10px;">July 2022 - Present</h5>
-          <h6 style="text-align: left; color: #fff; padding: 0px 10px;">Relevant Coursework</h6>
-          <ul style="text-align: left; color: #fff;">
-            <li>Computer Science Engineering</li>
-            <li>Python Development</li>
-            <li>Data Science</li>
-            <li>Machine Learning</li>
-            <li>Web Development</li>
-          </ul>
         </div>
-
-        <!-- Intermediate -->
-        <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding: 0px 0px; padding-bottom: 5px;">
-          <img src="Education/Sri%20Chaitanya.jpg" class="img-fluid" alt="Intermediate Image">
-          <p style="text-align: left; color: #fff; padding: 5px 10px;"><em>Intermediate in MPC Course</em></p>
-          <h5 style="text-align: left; padding: 0px 10px;">June 2020 - April 2022</h5>
-          <h6 style="text-align: left; color: #fff; padding: 0px 10px;">Relevant Coursework</h6>
-          <ul style="text-align: left; color: #fff;">
-            <li>Mathematics</li>
-            <li>English (First language)</li>
-            <li>IIT Training</li>
-          </ul>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <div class="icon-box">
+            <i class="ri-database-2-line" style="color: #5578ff; font-size: 40px;"></i>
+            <h3>Machine Learning</h3>
+          </div>
         </div>
-
-        <!-- Primary School -->
-        <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding: 0px 0px; padding-bottom: 5px;">
-          <img src="Education/Camford.jpg" class="img-fluid" alt="Primary Studies Image">
-          <p style="text-align: left; color: #fff; padding: 5px 10px;"><em>Primary Studies</em></p>
-          <h5 style="text-align: left; padding: 0px 10px;">June 2008 - May 2020</h5>
-          <h6 style="text-align: left; color: #fff; padding: 0px 10px;">Relevant Coursework</h6>
-          <ul style="text-align: left; color: #fff;">
-            <li>Mathematics</li>
-            <li>English (First language)</li>
-            <li>Remaining Standard Subjects</li>
-          </ul>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <div class="icon-box">
+            <i class="ri-camera-3-line" style="color: #e80368; font-size: 40px;"></i>
+            <h3>Computer Vision</h3>
+          </div>
         </div>
-
-      </div>
-    </div>
-   </div>
-  </section>
-<!-- End Education Section -->
-
-
-<!-- ======= Certificates Section ======= -->
-<section id="certificates" class="portfolio">
-  <div class="container">
-    <div class="section-title">
-      <h2>Online Certifications</h2>
-    </div>
-
-    <div class="row portfolio-container">
-
-      <!-- Certificate Cards -->
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/CSA.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>Certified System Administrator</h4>
-            <div class="portfolio-links">
-              <a href="https://www.credly.com/badges/75ad4a23-33bb-487b-9de4-8173b12de505/public_url" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <div class="icon-box">
+            <i class="ri-english-input" style="color: #1c7d32; font-size: 40px;"></i>
+            <h3>Web Development</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <div class="icon-box">
+            <i class="ri-code-s-slash-fill" style="color: #28a745; font-size: 40px;"></i>
+            <h3>Software Engineering</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <div class="icon-box">
+            <i class="ri-bar-chart-box-line" style="color: #f1081f; font-size: 40px;"></i>
+            <h3>Data Structures</h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <div class="icon-box">
+            <i class="ri-file-list-3-line" style="color: #47aeff; font-size: 40px;"></i>
+            <h3>Algorithms</h3>
           </div>
         </div>
       </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/CAD.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>Certified Application Developer</h4>
-            <div class="portfolio-links">
-              <a href="https://www.credly.com/badges/aa16fb35-be6c-43ef-b955-00122e8e328e/public_url" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/Data_Science.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>IBM Data Science</h4>
-            <div class="portfolio-links">
-              <a href="https://www.coursera.org/account/accomplishments/professional-cert/7Y46QVC5RW78" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/DSA.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>DSA in Python</h4>
-            <div class="portfolio-links">
-              <a href="https://drive.google.com/file/d/1-13D5BsPRnIoW7s8B5Z0LYk_q5eBFxnv/view" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/DA.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>Data Analytics</h4>
-            <div class="portfolio-links">
-              <a href="https://drive.google.com/file/d/1hrHnnZDA2vxV2EvscUpu-akVu70Fo8hu/view" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/data_engineering.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>Data Engineering</h4>
-            <div class="portfolio-links">
-              <a href="https://drive.google.com/file/d/1hrHnnZDA2vxV2EvscUpu-akVu70Fo8hu/view" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/NLP.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>Machine Learning for NLP</h4>
-            <div class="portfolio-links">
-              <a href="https://drive.google.com/file/d/1hrHnnZDA2vxV2EvscUpu-akVu70Fo8hu/view" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/Machine_Learning.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>Machine Learning</h4>
-            <div class="portfolio-links">
-              <a href="https://www.mygreatlearning.com/certificate/BHCHNVLJ" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/PE.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>Prompt Engineering</h4>
-            <div class="portfolio-links">
-              <a href="https://courses.cognitiveclass.ai/certificates/7c709e8a55944b8cb6e998da25497ba0" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 portfolio-item">
-        <div class="portfolio-wrap">
-          <img src="assets/img/Power_Bi.png" class="img-fluid" alt="">
-          <div class="portfolio-info">
-            <h4>Power BI</h4>
-            <div class="portfolio-links">
-              <a href="https://drive.google.com/file/d/17OG7qWXViec8A87mvVKkcvGz4wlsAqxp/view" target="_blank"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- End Certificates Section -->
-
- 
-
-
-  <!-- Start Experience Section >
-
-  <! <section id="experience" class="services">
+    </div></section><section id="education" class="services">
     <div class="container">
       <div class="section-title">
-        <h2>Experience</h2>
+        <h2>Education</h2>
       </div>
       <div class="row">
-          <div class="col-lg-12" data-aos="fade-up">
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.asu.edu/" style="color:#12d640">Arizona State University</a><br> </h4>
-                <h5 style="text-align:left;">January 2021 - Present</h5>
-                <p style="text-align:left;color:#fff"><em>Software Engineer </em></p>
-                <ul style="text-align:left;">
-                  <li>Managed large‑scale deployment of JupyterHub with Nbgrader and webwork software, facilitating approx 5500 students.</li>
-                  <li>Configured, troubleshot, and administered server‑side web applications for the statistics department.</li>
-                  <li>Handled Linux server administration and Apache configuration; automated tasks like user account creation, managing student database, and system maintenance using Shell and automation scripts, reducing manual work by 200%.</li>
-                </ul>
+        <div class="col-lg-12" data-aos="fade-up" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+
+          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding: 0px 0px; padding-bottom: 5px;">
+            <img src="Education/Gitam.jpg" class="img-fluid" alt="B.Tech Image">
+            <p style="text-align: left; color: #fff; padding: 5px 10px;"><em>B.Tech. in Computer Science (Data Science)</em></p>
+            <h5 style="text-align: left; padding: 0px 10px;">July 2022 - Present</h5>
+            <h6 style="text-align: left; color: #fff; padding: 0px 10px;">Relevant Coursework</h6>
+            <ul style="text-align: left; color: #fff;">
+              <li>Computer Science Engineering</li>
+              <li>Python Development</li>
+              <li>Data Science</li>
+              <li>Machine Learning</li>
+              <li>Web Development</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding: 0px 0px; padding-bottom: 5px;">
+            <img src="Education/Sri%20Chaitanya.jpg" class="img-fluid" alt="Intermediate Image">
+            <p style="text-align: left; color: #fff; padding: 5px 10px;"><em>Intermediate in MPC Course</em></p>
+            <h5 style="text-align: left; padding: 0px 10px;">June 2020 - April 2022</h5>
+            <h6 style="text-align: left; color: #fff; padding: 0px 10px;">Relevant Coursework</h6>
+            <ul style="text-align: left; color: #fff;">
+              <li>Mathematics</li>
+              <li>English (First language)</li>
+              <li>IIT Training</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="padding: 0px 0px; padding-bottom: 5px;">
+            <img src="Education/Camford.jpg" class="img-fluid" alt="Primary Studies Image">
+            <p style="text-align: left; color: #fff; padding: 5px 10px;"><em>Primary Studies</em></p>
+            <h5 style="text-align: left; padding: 0px 10px;">June 2008 - May 2020</h5>
+            <h6 style="text-align: left; color: #fff; padding: 0px 10px;">Relevant Coursework</h6>
+            <ul style="text-align: left; color: #fff;">
+              <li>Mathematics</li>
+              <li>English (First language)</li>
+              <li>Remaining Standard Subjects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="certificates" class="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>Online Certifications</h2>
+      </div>
+
+      <div class="row portfolio-container">
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/CSA.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Certified System Administrator</h4>
+              <div class="portfolio-links">
+                <a href="https://www.credly.com/badges/75ad4a23-33bb-487b-9de4-8173b12de505/public_url" target="_blank"><i class="bx bx-link"></i></a>
               </div>
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.augmenify.com/" style="color:#12d640">Augmenify Infotech Pvt. Ltd.</a><br> </h4>
-                <h5 style="text-align:left;">August 2020 - November 2020</h5>
-                <p style="text-align:left;color:#fff"><em>Backend Developer</em></p>
-                <ul style="text-align:left;">
-                  <li>Documented and coded server‑less web application for the hotel industry and designed REST API using Flask‑based JWT authentication.</li>
-                  <li>Redeveloped an existing system to support customer account management, scheduling, and time tracking; enabled dynamic API calls with the help of Amazon API Gateway, AWS Lambda, and DynamoDB.</li>
-                </ul>
-              </div>
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.epitomesolutions.in/" style="color:#12d640">Epitome Corporation Pvt. Ltd.</a><br> </h4>
-                <h5 style="text-align:left;">July 2019 - Dec 2019</h5>
-                <p style="text-align:left;color:#fff"><em>Software Developer</em></p>
-                <ul style="text-align:left;">
-                  <li>Tested, designed, and developed backend APIs of WebRTC enabled multi‑party video conferencing web application and delivered the project 15 days ahead of schedule by efficiently designing the flow of the project.</li>
-                </ul>
-              </div>
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.meditab.com/" target="_blank" style="color:#12d640">Meditab Software Pvt. Ltd.</a><br> </h4>
-                <h5 style="text-align:left;">May 2018 - June 2018</h5>
-                <p style="text-align:left;color:#fff"><em>Programmer Analyst</em></p>
-                <ul style="text-align:left;">
-                  <li>Optimized image processing algorithm of pill detection by creating customized MASKRCNN  algorithm, increasing accuracy by 15%; trained classification algorithm with the help of triplet loss to learn the image embedding of pill, reducing the hassle of collecting data of new pills. </li>
-                  <li>Devised a pipeline of the project to incorporate it into the product of the company. Implemented Restful APIs in Django that enabled our quality Analyst team to increase reporting speed by 46%.</li>
-                  <li>Built a web app to onboard data from the company’s product using Flask, Postgres, and AWS S3, enabling interactive charts in real-time.</li>
-                  <li>Mentored 2 interns to optimize the pill detection algorithm and to include the multiprocessing pipeline, increasing overall speed by 75%.</li>
-                </ul>
-              </div>
-              <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <h4 style="text-align:left;"><a href="https://www.sac.gov.in/Vyom/index.jsp" target="_blank" style="color:#12d640">Space Application Centre, ISRO</a><br> </h4>
-                <h5 style="text-align:left;">Jan 2018 - May 2018</h5>
-                <p style="text-align:left;color:#fff"><em>Research Intern</em></p>
-                <ul style="text-align:left;">
-                  <li>Implemented noise reduction algorithm on the satellite image and prepared architecture for detecting objects in high‑resolution satellite images, achieving 80% accuracy.</li>
-                  <li>Increased accessibility of satellite image data by redesigning database and application for showcasing graphical data.</li>
-                </ul>
             </div>
           </div>
         </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/CAD.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Certified Application Developer</h4>
+              <div class="portfolio-links">
+                <a href="https://www.credly.com/badges/aa16fb35-be6c-43ef-b955-00122e8e328e/public_url" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/Data_Science.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>IBM Data Science</h4>
+              <div class="portfolio-links">
+                <a href="https://www.coursera.org/account/accomplishments/professional-cert/7Y46QVC5RW78" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/DSA.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>DSA in Python</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1-13D5BsPRnIoW7s8B5Z0LYk_q5eBFxnv/view" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/DA.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Data Analytics</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1hrHnnZDA2vxV2EvscUpu-akVu70Fo8hu/view" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/data_engineering.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Data Engineering</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1hrHnnZDA2vxV2EvscUpu-akVu70Fo8hu/view" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/NLP.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Machine Learning for NLP</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/1hrHnnZDA2vxV2EvscUpu-akVu70Fo8hu/view" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/Machine_Learning.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Machine Learning</h4>
+              <div class="portfolio-links">
+                <a href="https://www.mygreatlearning.com/certificate/BHCHNVLJ" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/PE.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Prompt Engineering</h4>
+              <div class="portfolio-links">
+                <a href="https://courses.cognitiveclass.ai/certificates/7c709e8a55944b8cb6e998da25497ba0" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <div class="portfolio-wrap">
+            <img src="assets/img/Power_Bi.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Power BI</h4>
+              <div class="portfolio-links">
+                <a href="https://drive.google.com/file/d/17OG7qWXViec8A87mvVKkcvGz4wlsAqxp/view" target="_blank"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
- --\>
-  <!-- End Experience Section -->
-
-
-
-  <!-- Start Project Section -->
-  <section id="portfolio" class="portfolio">
+  <section id="portfolio" class="portfolio section-bg">
     <div class="container">
       <div class="section-title">
         <h2>Projects</h2>
+        <p>A showcase of my recent work and personal projects</p>
       </div>
-  
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter=".filter-app">Project</li>
-          </ul>
+      
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4 project-filter-buttons">
+        <button class="btn project-filter-btn active" data-filter="all">All</button>
+        <button class="btn project-filter-btn" data-filter="Full Stack">Full Stack</button>
+        <button class="btn project-filter-btn" data-filter="Machine Learning">Machine Learning</button>
+        <button class="btn project-filter-btn" data-filter="Frontend">Frontend</button>
+        <button class="btn project-filter-btn" data-filter="Data Science">Data Science</button>
+        <button class="btn project-filter-btn" data-filter="Computer Vision">Computer Vision</button>
+      </div>
+
+      <div class="row g-4 projects-container">
+        <div class="col-lg-4 col-md-6 project-item" data-category="Full Stack">
+          <div class="project-card featured">
+            <div class="featured-tag">Featured Project</div>
+            <div class="project-card-image">
+              <img src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=500" class="img-fluid" alt="Mock Interview System">
+              <span class="category-tag">Full Stack</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="card-title">Mock Interview System</h3>
+              <div class="date"><i class='bx bx-calendar'></i> 2024</div>
+              <p class="card-text">
+                Created a Mock Interview System that simulates real interview experience by assigning questions to candidates based on selected domain and evaluates their performance accordingly. Developed using Python and GUI with Tkinter, the system includes different modules like Login, Register, Start Interview, Instructions, Domain Selection, Interview Page and Result Page.
+              </p>
+              <div class="technologies">
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Python</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Tkinter</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Flask</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> React</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> CSV</span>
+              </div>
+              <div class="links">
+                <a href="https://mock-interview-system-python.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-demo">
+                  <i class='bx bx-link-external'></i> Demo
+                </a>
+                <a href="https://github.com/Bharath-2605/Mock-Interview-System-Bunny-Python" target="_blank" rel="noopener noreferrer" class="btn btn-github">
+                  <i class='bx bxl-github'></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 project-item" data-category="Machine Learning">
+          <div class="project-card featured">
+            <div class="featured-tag">Featured Project</div>
+            <div class="project-card-image">
+              <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=500" class="img-fluid" alt="G-Attendance">
+              <span class="category-tag">Machine Learning</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="card-title">G-Attendance</h3>
+              <div class="date"><i class='bx bx-calendar'></i> 2024</div>
+              <p class="card-text">
+                Built a facial recognition attendance system with 88% accuracy using face embeddings and Euclidean distance; digitized attendance tracking for classrooms. Using GUI interface developed multiple pages like student, attendance, train image, helpdesk and login page. The algorithms used are Harscade algorithm, Face Embeddings and Euclidean Distance Matching.
+              </p>
+              <div class="technologies">
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Python</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Deep Learning</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Face Embeddings</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Computer Vision</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> OpenCV</span>
+              </div>
+              <div class="links">
+                <button class="btn btn-demo btn-disabled" disabled>
+                  <i class='bx bx-link-external'></i> Demo
+                </button>
+                <a href="https://github.com/Bharath-2605/G-Attendance" target="_blank" rel="noopener noreferrer" class="btn btn-github">
+                  <i class='bx bxl-github'></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 project-item" data-category="Frontend">
+          <div class="project-card featured">
+            <div class="featured-tag">Featured Project</div>
+            <div class="project-card-image">
+              <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=500" class="img-fluid" alt="G-Health">
+              <span class="category-tag">Frontend</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="card-title">G-Health</h3>
+              <div class="date"><i class='bx bx-calendar'></i> 2024</div>
+              <p class="card-text">
+                Designed a hospital appointment platform, integrating real-time slot availability, automated email/SMS alerts, and secure login. This website is an innovative solution for booking doctor appointments, combining convenience with advanced features to streamline health checkup scheduling in a highly efficient and user-centric manner.
+              </p>
+              <div class="technologies">
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> HTML</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> CSS</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> JavaScript</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Bootstrap</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Firebase</span>
+              </div>
+              <div class="links">
+                <a href="https://g-health-83a78.web.app/dashboard.html" target="_blank" rel="noopener noreferrer" class="btn btn-demo">
+                  <i class='bx bx-link-external'></i> Demo
+                </a>
+                <a href="https://github.com/Bharath-2605/G-Health" target="_blank" rel="noopener noreferrer" class="btn btn-github">
+                  <i class='bx bxl-github'></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 project-item" data-category="Data Science">
+          <div class="project-card">
+            <div class="project-card-image">
+              <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=500" class="img-fluid" alt="Portuguese Banking Classification">
+              <span class="category-tag">Data Science</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="card-title">Portuguese Banking Classification</h3>
+              <div class="date"><i class='bx bx-calendar'></i> 2023</div>
+              <p class="card-text">
+                Developed a predictive model to identify customers more likely to engage positively with marketing campaigns. By leveraging historical campaign data, the project aims to optimize marketing efforts, improve conversion rates, and minimize unnecessary outreach. The model achieved an accuracy of 88%.
+              </p>
+              <div class="technologies">
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Python</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Machine Learning</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Scikit-learn</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Pandas</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Data Analysis</span>
+              </div>
+              <div class="links">
+                <button class="btn btn-demo btn-disabled" disabled>
+                  <i class='bx bx-link-external'></i> Demo
+                </button>
+                <a href="https://github.com/Bharath-2605/Portuguese-Banking-Classification" target="_blank" rel="noopener noreferrer" class="btn btn-github">
+                  <i class='bx bxl-github'></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 project-item" data-category="Computer Vision">
+          <div class="project-card">
+            <div class="project-card-image">
+              <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=500" class="img-fluid" alt="Live Snake Game">
+              <span class="category-tag">Computer Vision</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="card-title">Live Snake Game</h3>
+              <div class="date"><i class='bx bx-calendar'></i> 2023</div>
+              <p class="card-text">
+                Computer Vision Based Snake Game where users hand gets recognised using OpenCV. The finger gets marked as point that is head without touching the body or tail collect as many donuts as you can. If the distance between head and body is below one the game stops and shows gameover. Have fun while playing!
+              </p>
+              <div class="technologies">
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Python</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Computer Vision</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> OpenCV</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> MediaPipe</span>
+              </div>
+              <div class="links">
+                <button class="btn btn-demo btn-disabled" disabled>
+                  <i class='bx bx-link-external'></i> Demo
+                </button>
+                <a href="https://github.com/Bharath-2605/Snake-py" target="_blank" rel="noopener noreferrer" class="btn btn-github">
+                  <i class='bx bxl-github'></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 project-item" data-category="Computer Vision">
+          <div class="project-card">
+            <div class="project-card-image">
+              <img src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=500" class="img-fluid" alt="Live Tic Tac Toe Game">
+              <span class="category-tag">Computer Vision</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="card-title">Live Tic Tac Toe Game</h3>
+              <div class="date"><i class='bx bx-calendar'></i> 2023</div>
+              <p class="card-text">
+                Computer Vision Based Tic Tac Toe Game where users hand gets recognised using OpenCV. Place every cube either "X" or "O". If nine cubes are filled then the game stops and shows gameover. Using "R" you can restart the game, Using "E" you can quit the game. Have fun while playing!
+              </p>
+              <div class="technologies">
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Python</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> Computer Vision</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> OpenCV</span>
+                <span class="tech-tag"><i class='bx bx-purchase-tag-alt'></i> MediaPipe</span>
+              </div>
+              <div class="links">
+                <button class="btn btn-demo btn-disabled" disabled>
+                  <i class='bx bx-link-external'></i> Demo
+                </button>
+                <a href="https://github.com/Bharath-2605/Tik-Tac-Toe" target="_blank" rel="noopener noreferrer" class="btn btn-github">
+                  <i class='bx bxl-github'></i> Code
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-  
-      <div class="row portfolio-container">
-        
-        <!-- First Project: Attendance Face Recognition -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>G-Attendance</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/Projects/attendance.jpg" class="img-fluid" alt="Attendance Face Recognition">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="Projects/FaceRecognition.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Second Project: Mock-Ai-Interview -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-         <center><h4> AI Mock Interview System</h4></center>
-         <div class="portfolio-wrap">
-            <img src="assets/img/Projects/Image.jpeg" class="img-fluid" alt="Classification Image">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="Projects/Ai-Mock-Interview.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details">
-                  <i class="bx bx-info-circle"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Thirs Project: G-Health -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-         <center><h4>G-Health</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/Projects/GHealth.jpeg" class="img-fluid" alt="G-Healh Image">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="Projects/G-Health.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details">
-                  <i class="bx bx-info-circle"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-            <!-- Fourth Project: Live Snake Game -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>Live Snake Game</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/Projects/snake.jpg" class="img-fluid" alt="Snake Game Image">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="Projects/LiveSnakeGame.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details">
-                  <i class="bx bx-info-circle"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-         <!-- Fifth Project:Tic Tac Toe -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-         <center><h4>Live Tic Tac Toe Game</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/Projects/tttimage.jpg" class="img-fluid" alt="Tic Tac Toe Image">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="Projects/Tic_Tac_Toe.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details">
-                  <i class="bx bx-info-circle"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sixth Project: Classification -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-         <center><h4>Portuguese-Banking-Classification</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/Projects/t4.jpg" class="img-fluid" alt="Classification Image">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="Projects/Portuguese-Banking-Classification.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details">
-                  <i class="bx bx-info-circle"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-        <!-- Seventh Project: Portfolio -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <br>
-          <center><h4>My Portfolio</h4></center> 
-           <div class="portfolio-wrap"> 
-             <img src="assets/img/Projects/portfolio.jpg" class="img-fluid" alt="Portfolio Image">
-             <div class="portfolio-info"> 
-               <div class="portfolio-links"> 
-                 <a href="Projects/Portfolio.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"> 
-                   <i class="bx bx-info-circle"></i> 
-                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> <!-- End of portfolio-container -->
-    </div> <!-- End of container -->
+    </div>
   </section>
-  
-        
-
-
-        <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center><h4>To-Do App</h4></center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/todo.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="projects/todo.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
+  <section id="skills" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Skills</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-12" data-aos="fade-up">
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+            <h4 style="text-align:left;color:#09203a">Languages and Databases</h4>
+            <p style="text-align:left;">
+              <img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg" alt="Python logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/java/java-horizontal.svg" alt="Java logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="HTML5 logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3 logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="Skills/javascript.png" alt="JavaScript logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/mysql/mysql-horizontal.svg" alt="MySQL logo" style="width: 100px; height: auto; object-fit: contain;">
+            </p>
           </div>
-        </div> 
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <center>
-            <h4>Image recognition as Service</h4>
-          </center>
-          <div class="portfolio-wrap">
-            <img src="assets/img/project/iras.jpeg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-        
-              <div class="portfolio-links">
-                <a href="projects/iras.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox"
-                  title="Project Details"><i class="bx bx-info-circle"></i></a>
-              </div>
-            </div>
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+            <h4 style="text-align:left;color:#09203a">Frameworks</h4>
+            <p style="text-align:left;">
+              <img src="Skills/vector.png" alt="Vector logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg" alt="Django logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" alt="React logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg" alt="OpenCV logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/numpy/numpy-ar21.svg" alt="NumPy logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/usepanda/usepanda-ar21.svg" alt="Pandas logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="Skills/matplotlib.png" alt="Matplotlib logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn logo" style="width: 100px; height: auto; object-fit: contain;">
+            </p>
           </div>
-        </div> -->
-
-        
-        
-
-
-  <!-- End Project Section -->
-
-
-
- <!-- Start Skills Section -->
-<section id="skills" class="services">
-  <div class="container">
-    <div class="section-title">
-      <h2>Skills</h2>
-    </div>
-    <div class="row">
-      <div class="col-lg-12" data-aos="fade-up">
-        <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
-          <h4 style="text-align:left;color:#09203a">Languages and Databases</h4>
-          <p style="text-align:left;">
-            <img src="https://www.vectorlogo.zone/logos/python/python-horizontal.svg" alt="Python logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/java/java-horizontal.svg" alt="Java logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="HTML5 logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3 logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="Skills/javascript.png" alt="JavaScript logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/mysql/mysql-horizontal.svg" alt="MySQL logo" style="width: 100px; height: auto; object-fit: contain;">
-          </p>
-        </div>
-        <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
-          <h4 style="text-align:left;color:#09203a">Frameworks</h4>
-          <p style="text-align:left;">
-            <img src="Skills/vector.png" alt="Vector logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg" alt="Django logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" alt="React logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg" alt="OpenCV logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/numpy/numpy-ar21.svg" alt="NumPy logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/usepanda/usepanda-ar21.svg" alt="Pandas logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="Skills/matplotlib.png" alt="Matplotlib logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn logo" style="width: 100px; height: auto; object-fit: contain;">
-          </p>
-        </div>
-        <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
-          <h4 style="text-align:left;color:#09203a">Tools</h4>
-          <p style="text-align:left;">
-            <img src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" alt="GitHub logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="Google Cloud logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg" alt="Heroku logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg" alt="Jupyter logo" style="width: 100px; height: auto; object-fit: contain;">
-            <img src="Skills/vscode.jpg" alt="VS Code logo" style="width: 100px; height: auto; object-fit: contain;">
-          </p>
+          <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100" style="background:#fff">
+            <h4 style="text-align:left;color:#09203a">Tools</h4>
+            <p style="text-align:left;">
+              <img src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" alt="GitHub logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg" alt="Google Cloud logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/heroku/heroku-ar21.svg" alt="Heroku logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="https://www.vectorlogo.zone/logos/jupyter/jupyter-ar21.svg" alt="Jupyter logo" style="width: 100px; height: auto; object-fit: contain;">
+              <img src="Skills/vscode.jpg" alt="VS Code logo" style="width: 100px; height: auto; object-fit: contain;">
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End Skills Section -->
-
-
-
-  <!-- Start Links section -->
+  </section>
   <section id="links" class="services">
     <div class="container">
       <div class="section-title">
@@ -680,24 +804,9 @@ e<!DOCTYPE html>
           <h4 class="title"><a href="https://drive.google.com/file/d/1HuVpr2TBPI6LiB_25GtvXBG_X2TCiOm4/view" target="_blank">Resume</a></h4>
           <p class="description" style="color:#fff;">The link contains downloadable resume</p>
         </div>
-        <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up">
-          <a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank"><div class="icon"><i class="icofont-link"></i></div></a>
-          <h4 class="title"><a href="https://github.com/rajaprerak/LeetCode_Problems" target="_blank">LeetCode Repository</a></h4>
-          <p class="description" style="color:#fff;"> The github repository contains leetcode problems solution in python.</p>
-        </div> -->
-        <!-- <div class="col-md-3 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <a href="https://techingenious.herokuapp.com/" target="_blank"><div class="icon"><i class="icofont-page"></i></div></a>
-          <h4 class="title"><a href="https://techingenious.herokuapp.com/" target="_blank">Blog</a></h4>
-          <p class="description" style="color:#fff;">Blog containing articles on AI, coding, development</p>
-        </div> -->
       </div>
     </div>
-  </section> <!--End Links Section -->
-
-
-  <!-- Start Contact Section -->
-
-  <section id="contacts" class="contact">
+  </section> <section id="contacts" class="contact">
     <div class="container">
 
       <div class="section-title">
@@ -725,9 +834,6 @@ e<!DOCTYPE html>
               <a href="mailto:bharathbollineni.2605@gmail.com" target="_blank" class="google"><i class="bx bxl-google"></i></a>
               <a href="https://www.youtube.com/@bb_bollineni" target="_blank" class="youtube"><i class="bx bxl-youtube"></i></a>
               <a href="https://www.instagram.com/bb_bollineni/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-
-
-
             </div>
           </div>
         </div>
@@ -749,13 +855,8 @@ e<!DOCTYPE html>
           </div>
         </div>
       </div>
-      <!-- <div id="sfczmlqxr5caww28rswrt8849ghbekgnh3j" ></div><script type="text/javascript" src="https://counter1.stat.ovh/private/counter.js?c=zmlqxr5caww28rswrt8849ghbekgnh3j&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="free web counter"><img src="https://counter1.stat.ovh/private/freecounterstat.php?c=zmlqxr5caww28rswrt8849ghbekgnh3j" border="0" title="free web counter" alt="free web counter" style="visibility: none;"></a></noscript> -->
     </div>
   </section>
-
-  <!-- End Contact Section -->
-
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -767,16 +868,43 @@ e<!DOCTYPE html>
   <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["Data Analyst","Machine Learning Developer","WebDeveloper","Python Developer"],
+    var typed = new Typed('.typing', {
+      strings: ["Data Analyst", "Machine Learning Developer", "WebDeveloper", "Python Developer"],
       loop: true,
       typeSpeed: 65,
       backSpeed: 75
     });
   </script>
 
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.project-filter-buttons .project-filter-btn');
+      const projectItems = document.querySelectorAll('.projects-container .project-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove 'active' class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add 'active' class to the clicked button
+          button.classList.add('active');
+
+          const filterValue = button.getAttribute('data-filter');
+
+          projectItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            
+            if (filterValue === 'all' || filterValue === itemCategory) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 
 </body>
 
