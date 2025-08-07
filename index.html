@@ -254,9 +254,13 @@
             margin-bottom: 2rem;
         }
 
-        /* Added CSS to prevent section headers from colliding with the header */
+        /* Adjusted CSS to prevent ALL section headers from colliding with the fixed header */
+        section {
+            padding-top: 80px; /* Add padding to the top of all sections */
+        }
+        
         .section-title {
-            padding-top: 100px;
+            padding-top: 0; /* Remove the extra padding from the section title itself */
         }
     </style>
 
