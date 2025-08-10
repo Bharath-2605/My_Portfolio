@@ -390,9 +390,17 @@
         }
 
         .resume-section .certifications-list {
-            list-style-type: disc;
-            padding-left: 2rem;
+            list-style-type: none; /* Removed the default disc bullet */
+            padding-left: 1.5rem;
             color: #9ca3af;
+        }
+
+        .resume-section .certifications-list li::before {
+            content: "•"; /* Custom bullet point */
+            color: #10b981; /* Green color for the bullet */
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
         }
         
         .resume-section .certifications-list li {
@@ -565,6 +573,12 @@
                 <h2>Resume</h2>
             </div>
             
+            <div class="text-center mb-5">
+                <a href="https://drive.google.com/file/d/1pE7ebwIF5ZNtP93aegbuegfQT2uT28XB/view" target="_blank" class="btn btn-demo text-white" style="background-color: #10b981; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center;">
+                    <i class="ri-download-line" style="margin-right: 0.5rem;"></i> Download Resume (PDF)
+                </a>
+            </div>
+            
             <div class="resume-content">
                 <div class="resume-header">
                     <h3>Bharath Bollineni</h3>
@@ -625,7 +639,7 @@
                     <div class="item">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5>G-Attendance</h5>
-                            <a href="#" target="_blank" rel="noopener noreferrer" style="color: #10b981;"><i class="ri-link"></i> View Project</a>
+                            <a href="https://github.com/Bharath-2605/G-Attendance" target="_blank" rel="noopener noreferrer" style="color: #10b981;"><i class="ri-link"></i> View Project</a>
                         </div>
                         <ul class="mt-2">
                             <li>Built a facial recognition attendance system with 88% accuracy using face embeddings and Euclidean distance; digitized attendance tracking for classrooms of up to 60 students.</li>
@@ -635,7 +649,7 @@
                     <div class="item">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5>G-Health</h5>
-                            <a href="#" target="_blank" rel="noopener noreferrer" style="color: #10b981;"><i class="ri-link"></i> View Project</a>
+                            <a href="https://github.com/Bharath-2605/G-Health" target="_blank" rel="noopener noreferrer" style="color: #10b981;"><i class="ri-link"></i> View Project</a>
                         </div>
                         <ul class="mt-2">
                             <li>Designed a hospital appointment platform serving 100+ GITAM faculty members, integrating real-time slot availability, automated email/SMS alerts, and secure login via Firebase.</li>
@@ -645,7 +659,7 @@
                     <div class="item">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5>AI-Mock-Interview-System</h5>
-                            <a href="#" target="_blank" rel="noopener noreferrer" style="color: #10b981;"><i class="ri-link"></i> View Project</a>
+                            <a href="https://github.com/Bharath-2605/Mock-Interview-System-Bunny-Python" target="_blank" rel="noopener noreferrer" style="color: #10b981;"><i class="ri-link"></i> View Project</a>
                         </div>
                         <ul class="mt-2">
                             <li>Created a mock interview platform with domain-specific timed QA and auto-scoring, adopted by over 120+ students.</li>
@@ -700,10 +714,10 @@
                 <div class="section-block">
                     <h4><i class="ri-award-line"></i> Certifications</h4>
                     <ul class="certifications-list">
-                        <li>Certified System Administrator ServiceNow</li>
-                        <li>Certified Application Developer ServiceNow</li>
-                        <li>SQL and Relational Databases 101 IBM</li>
-                        <li>Web Development Fundamentals IBM</li>
+                        <li><a href="https://www.credly.com/earner/earned/badge/75ad4a23-33bb-487b-9de4-8173b12de505" target="_blank" style="color: #9ca3af;">Certified System Administrator ServiceNow</a></li>
+                        <li><a href="https://www.credly.com/earner/earned/badge/aa16fb35-be6c-43ef-b955-00122e8e328e" target="_blank" style="color: #9ca3af;">Certified Application Developer ServiceNow</a></li>
+                        <li><a href="https://courses.skillsbuild.skillsnetwork.site/certificates/40c0dea5b97e497481fb189e86e497d5" target="_blank" style="color: #9ca3af;">SQL and Relational Databases 101 IBM</a></li>
+                        <li><a href="https://www.credly.com/badges/e847cee6-d460-42b7-9c1e-6adbe0dac314" target="_blank" style="color: #9ca3af;">Web Development Fundamentals IBM</a></li>
                     </ul>
                 </div>
             </div>
