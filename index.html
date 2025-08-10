@@ -26,6 +26,7 @@
     <meta content="" name="keywords">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -33,6 +34,7 @@
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2g6I8Vf/x7m0b4A1g7eA61D2nB/qK0d4f4P0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="assets/css/style.css" rel="stylesheet">
 
@@ -46,12 +48,12 @@
         gtag('js', new Date());
         gtag('config', 'UA-169007209-3');
     </script>
-    
+
     <style>
         .section-bg {
             background-color: #111827;
         }
-        
+
         .section-title h2 {
             font-size: 3rem;
             font-weight: 700;
@@ -65,7 +67,8 @@
             max-width: 50rem;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 1rem; /* Added margin to create space */
+            margin-top: 1rem;
+            /* Added margin to create space */
         }
 
         .project-filter-buttons .project-filter-btn {
@@ -88,7 +91,7 @@
             color: #fff;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-        
+
         .project-card {
             background-color: #1f2937;
             border-radius: 0.75rem;
@@ -117,7 +120,7 @@
             font-weight: 600;
             font-size: 0.875rem;
         }
-        
+
         .project-card-image {
             position: relative;
             overflow: hidden;
@@ -153,7 +156,7 @@
             flex-direction: column;
             flex-grow: 1;
         }
-        
+
         .project-card-body h3 {
             font-size: 1.25rem;
             font-weight: 700;
@@ -256,12 +259,91 @@
 
         /* Adjusted CSS to prevent ALL section headers from colliding with the fixed header */
         section {
-            padding-top: 80px; /* Add padding to the top of all sections */
+            padding-top: 80px;
+            /* Add padding to the top of all sections */
+        }
+
+        .section-title {
+            padding-top: 0;
+            /* Remove the extra padding from the section title itself */
+        }
+
+        /* HOME PAGE ANIMATIONS */
+        #header {
+            animation: fadeIn 2s ease-in-out;
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(17, 24, 39, 0.8);
+            z-index: -1;
+        }
+
+        /* Fire effect for the name */
+        .fire-text {
+            color: #fff;
+            font-size: 6rem;
+            /* Increased size for impact */
+            font-family: 'Creepster', cursive;
+            text-transform: uppercase;
+            text-shadow:
+                0 -5px 10px rgba(255, 255, 255, 0.9),
+                0 -10px 20px rgba(255, 255, 255, 0.7),
+                0 -20px 40px rgba(255, 255, 255, 0.5),
+                0 -30px 60px #fff84c,
+                0 -40px 80px #ffb347,
+                0 -50px 100px #ff8000,
+                0 -60px 120px #ff0000;
+            animation: fire-flicker 0.2s linear infinite;
+        }
+
+        @keyframes fire-flicker {
+            0%,
+            100% {
+                text-shadow:
+                    0 -5px 10px rgba(255, 255, 255, 0.9),
+                    0 -10px 20px rgba(255, 255, 255, 0.7),
+                    0 -20px 40px rgba(255, 255, 255, 0.5),
+                    0 -30px 60px #fff84c,
+                    0 -40px 80px #ffb347,
+                    0 -50px 100px #ff8000,
+                    0 -60px 120px #ff0000;
+            }
+            50% {
+                text-shadow:
+                    0 -5px 12px rgba(255, 255, 255, 1),
+                    0 -12px 22px rgba(255, 255, 255, 0.8),
+                    0 -22px 44px rgba(255, 255, 255, 0.6),
+                    0 -32px 64px #fff84c,
+                    0 -42px 84px #ffb347,
+                    0 -52px 104px #ff8000,
+                    0 -62px 124px #ff0000;
+            }
+        }
+
+        .header-tops .container h1 {
+            display: none; /* Hide the name in the header */
         }
         
-        .section-title {
-            padding-top: 0; /* Remove the extra padding from the section title itself */
+        .header-tops.home-page h1 {
+            display: block; /* Show name only on home page */
         }
+        
     </style>
 
 </head>
@@ -269,10 +351,11 @@
 <body>
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <header id="header" class="header-tops">
+    <header id="header" class="header-tops home-page">
         <div class="container">
-            <h1><a href="index.html">Bharath Bollineni</a></h1>
+            <h1 class="fire-text">Bharath Bollineni</h1>
             <h2 style="color:#fff">I'm <span class="typing" style="color:#12D640"></span></h2>
+
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="#header"> <span>Home</span></a></li>
@@ -280,7 +363,7 @@
                     <li><a href="#education"> <span>Education</span></a></li>
                     <li><a href="#certificates"> <span>Certificates</span></a></li>
                     <li><a href="#portfolio"> <span>Projects</span></a></li>
-                    <li><a href="#contacts"> <span>Contact</span></a></li>
+                    <li><a href="#contact"> <span>Contact</span></a></li>
                 </ul>
             </nav>
             <div class="social-links">
@@ -548,7 +631,7 @@
                 <h2>Projects</h2>
                 <p>A showcase of my recent work and personal projects</p>
             </div>
-            
+
             <div class="d-flex flex-wrap justify-content-center gap-2 mb-4 project-filter-buttons">
                 <button class="btn project-filter-btn active" data-filter="all">All</button>
                 <button class="btn project-filter-btn" data-filter="Full Stack">Full Stack</button>
@@ -622,7 +705,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 project-item" data-category="Frontend">
                     <div class="project-card featured">
                         <div class="featured-tag">Featured Project</div>
@@ -848,7 +931,7 @@
 
                     projectItems.forEach(item => {
                         const itemCategory = item.getAttribute('data-category');
-                        
+
                         if (filterValue === 'all' || filterValue === itemCategory) {
                             item.style.display = 'block';
                         } else {
@@ -861,5 +944,3 @@
     </script>
 </body>
 </html>
-
-
